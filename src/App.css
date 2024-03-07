@@ -1,0 +1,19 @@
+#root{
+  margin: 100px 30%;
+}
+.div-load {
+  font-size: 50px;
+  color: brown;
+  font-weight: bold;
+}
+li{
+  list-style: none;
+  width: 250px;
+  border-bottom: solid 1px #000;
+}
+.ul-main{
+  display: flex;
+}
+input{
+  margin: 0 10px;
+}
