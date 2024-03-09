@@ -7,8 +7,8 @@ import Inputs from './Inputs';
 function App() {
   const [users, setUsers] = useState([]);
   const [isShow, showWindow] = useState(true);
-  const [name, inpName] = useState([]);
-  const [phone, inpPhone] = useState([]);
+  const [name, inpName] = useState('');
+  const [phone, inpPhone] = useState('');
 
     useEffect(() => {
       fetch('https://jsonplaceholder.typicode.com/users')
@@ -47,7 +47,7 @@ function App() {
         {users.map((user) => (
           <Users key={user.id} user={user} deleteUser={deleteUser}/>
         ))}
-        <button onClick={openWind}> {isShow ?  'New user': "Cancel " }</button>
+        {users.length!==0 && <button onClick={openWind}> {isShow ?  'New user': "Cancel " }</button>}
 
         {!isShow && <Inputs saveUser={saveUser} name={name} phone={phone} inpName={inpName} inpPhone={inpPhone}/>}
        
